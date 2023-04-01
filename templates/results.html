@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Reviews</div>
+
+   <table cellspacing="0">
+      <tr>
+        <th>Prod. Name</th>
+         <th>Cust. Name</th>
+         <th>Rating</th>
+         <th>Comment Heading</th>
+         <th width="230">Comments</th>
+         <th>Likes</th>
+         <th>Dislikes</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+        <td>{{reviews[review]['prod_name']}}</td>
+        <td>{{reviews[review]['name']}}</td>
+        <td>{{reviews[review]['customer_rating']}}</td>
+        <td>{{reviews[review]['comment_header']}}</td>
+        <td>{{reviews[review]['customer_comment']}} </td>
+        <td>{{reviews[review]['likes']}} </td>
+        <td>{{reviews[review]['dislikes']}} </td>
+        <!-- <td>{{reviews[review]}} </td> -->
+       {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
