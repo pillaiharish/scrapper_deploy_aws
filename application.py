@@ -6,7 +6,6 @@ import requests
 from urllib.request import urlopen as uReq
 import logging,json
 from pymongo import MongoClient
-import os
 
 
 logging.basicConfig(filename='example.log', filemode='w', 
@@ -14,12 +13,12 @@ logging.basicConfig(filename='example.log', filemode='w',
                     level=logging.DEBUG,
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-MONGO_USER_PASSWORD = os.environ["MONGO_USER_PASSWORD"]
+
 application = Flask(__name__)
 app = application
 WEBSITE_URL_1 = "https://www.flipkart.com"
 comments_data = dict()
-client = MongoClient(f"mongodb+srv://{MONGO_USER_PASSWORD}@cluster0.swnzv.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://new_user31:VDWMCC7oPQMHMlSI@cluster0.swnzv.mongodb.net/?retryWrites=true&w=majority")
 
 @app.route("/", methods=['GET'])
 def index_page():
