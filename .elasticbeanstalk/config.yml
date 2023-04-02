@@ -15,3 +15,5 @@ global:
   repository: origin
   sc: git
   workspace_type: Application
+env:
+  MONGO_USER_PASSWORD: ${{ secrets.MONGO_USER_PASSWORD }} 
